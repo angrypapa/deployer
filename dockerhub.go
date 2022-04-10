@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-var DockerhubRegistry = "https://registry.hub.docker.com"
+var DockerhubRegistry = "https://hub.docker.com"
 
 // CallBackData is the data format described at https://docs.docker.com/docker-hub/webhooks/#callback-json-data
 type CallBackData struct {
