@@ -86,7 +86,7 @@ func testAndDeploy() {
 func deploy() {
 	svc := elasticbeanstalk.New(
 		session.New(),
-		&aws.Config{Region: aws.String("us-east-1")},
+		&aws.Config{Region: aws.String("us-east-2")},
 	)
 
 	params := &elasticbeanstalk.UpdateEnvironmentInput{
@@ -115,10 +115,10 @@ func getHeartbeat(w http.ResponseWriter, r *http.Request) {
 // handleVersion returns the current version of the API
 func getVersion(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf(`{
-"source": "https://github.com/Securing-DevOps/deployer",
+"source": "https://github.com/angrypapa/deployer",
 "version": "%s",
 "commit": "%s",
-"build": "https://circleci.com/gh/Securing-DevOps/deployer/"
+"build": "https://circleci.com/gh/angrypapa/deployer/"
 }`, version, commit)))
 }
 
