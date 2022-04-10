@@ -5,6 +5,8 @@
 # DOCKER_PASS
 #
 # Read the README for more information.
+version: 2
+jobs:
 machine:
   environment:
     GOPATH_HEAD: "$(echo $GOPATH | cut -d ':' -f 1)"
