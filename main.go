@@ -47,7 +47,7 @@ func (dplr *deployer) postWebHook(w http.ResponseWriter, r *http.Request) {
 	// This application only accepts containers placed under the
 	// `securingdevops` dockerhub organization. If this wasn't an
 	// example application, we would make the namespacing configurable
-	if hookData.Repository.Namespace != `securingdevops` {
+	if hookData.Repository.Namespace != `angrypapa` {
 		httpError(w, http.StatusUnauthorized, "Invalid namespace")
 		return
 	}
@@ -90,9 +90,9 @@ func deploy() {
 	)
 
 	params := &elasticbeanstalk.UpdateEnvironmentInput{
-		ApplicationName: aws.String("invoicer201707071231"),
-		EnvironmentId:   aws.String("e-y8ubep55hp"),
-		VersionLabel:    aws.String("invoicer-api"),
+		ApplicationName: aws.String("deployer202204101625"),
+		EnvironmentId:   aws.String("e-c9kjgygryn"),
+		VersionLabel:    aws.String("deployer-api"),
 	}
 	resp, err := svc.UpdateEnvironment(params)
 
