@@ -6,9 +6,7 @@
 #
 # Read the README for more information.
 version: 2
-jobs:
-  build:
-    machine: true
+machine:
     environment:
       GOPATH_HEAD: "$(echo $GOPATH | cut -d ':' -f 1)"
       GOPATH_BASE: "$GOPATH_HEAD/src/github.com/$CIRCLE_PROJECT_USERNAME"
@@ -17,7 +15,7 @@ jobs:
 
     services:
       - docker
-
+jobs:
 dependencies:
   override:
     - rm -rf ${GOPATH_BASE}/
