@@ -7,7 +7,8 @@
 # Read the README for more information.
 version: 2
 jobs:
-  machine:
+  build:
+    machine: true
     environment:
       GOPATH_HEAD: "$(echo $GOPATH | cut -d ':' -f 1)"
       GOPATH_BASE: "$GOPATH_HEAD/src/github.com/$CIRCLE_PROJECT_USERNAME"
