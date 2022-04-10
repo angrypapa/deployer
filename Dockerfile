@@ -11,7 +11,7 @@ ADD deploymentTests /app/deploymentTests/
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install jq postgresql-client curl unzip
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install
 
 USER app
 EXPOSE 8080
