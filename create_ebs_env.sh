@@ -39,8 +39,8 @@ aws elasticbeanstalk create-environment \
     --environment-name deployer-api \
     --description "deployer API environment" \
     --tags "Key=Owner,Value=$(whoami)" \
-    --solution-stack-name "$dockerstack" \
-    --tier "Name=WebServer,Type=Standard,Version=''" > tmp/$identifier/ebcreateapienv.json || fail
+    --solution-stack-name "64bit Amazon Linux 2018.03 v2.17.7 running Docker 20.10.7-ce" \
+    --tier "Name=WebServer,Type=Standard,Version=''" --option-settings "Namespace=aws:autoscaling:launchconfiguration,OptionName=IamInstanceProfile,Value=eb-invoicer-role" > tmp/$identifier/ebcreateapienv.json || fail
 apieid=$(jq -r '.EnvironmentId' tmp/$identifier/ebcreateapienv.json)
 echo "API environment $apieid is being created"
 
