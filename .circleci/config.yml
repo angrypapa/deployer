@@ -5,7 +5,7 @@ jobs:
     # You will need to modify the code below to reflect your github account/repo setup
     working_directory: /go/src/github.com/angrypapa/deployer
     docker:
-      - image: circleci/golang:latest
+      - image: circleci/golang:latest-node
     environment:
       GO15VENDOREXPERIMENT: 1
     branches:
